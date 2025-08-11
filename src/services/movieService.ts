@@ -8,7 +8,7 @@ interface MovieSearchResponse {
   total_pages: number;
 }
 
-export default async function fetchMovies(query: string, page: number) {
+export default async function fetchMovies(query: string, page: number): Promise<MovieSearchResponse> {
    const response = await axios.get<MovieSearchResponse>(
     `https://api.themoviedb.org/3/search/movie`,
     {
